@@ -155,4 +155,7 @@ PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]${PS1_CMD1}:\n\$
 # Cargo 
 . "$HOME/.cargo/env"
 
+# path variable exports 
+export EDITOR="$(which nvim)"
+
 
