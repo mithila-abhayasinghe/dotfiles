@@ -1,3 +1,7 @@
+# Author : Mithila Abhayasinghe
+# Date : 2025.01.18
+
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -16,8 +20,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=20000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -87,10 +91,35 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
-alias ll='ls -lA'
-alias la='ls -A'
-alias l='ls -CF'
+
+# Some aliases for convenience
+alias up="cd .."
+
+# more ls to eza aliases
+alias la='eza --all --all --sort extension --icons=always'
+alias ll='eza -l --sort extension --icons=always'
+alias llg='eza -l --sort extension --icons=always --git --git-repos-no-status'
+alias lt='eza -T --sort extension --icons=always'
+alias lr='eza -R --sort extension --icons=always'
+alias l='eza --sort extension --icons=always'
+alias ld='eza -D --icons=always'
+
+# advanced eza for custom stuff combination 
+alias al='eza --icons=always --color=always'
+
+# -s, --sort SORT_FIELD      
+# Valid sort fields:         
+# name, Name, extension, Extension, size, type,
+# created, modified, accessed, changed, inode, and none.
+# date, time, old, and new all refer to modified
+
+# some git stuff for eza
+#  --git-ignore               ignore files mentioned in '.gitignore'
+#  --git                      list each file's Git status, if tracked or ignored
+#  --no-git                   suppress Git status (always overrides --git,--git-repos, --git-repos-no-status)
+#  --git-repos                list root of git-tree status
+#  --git-repos-no-status      list each git-repos branch name (much faster)
+
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -112,12 +141,18 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# aliases for windows stuff
 alias fastfetch="fastfetch.exe"
-alias up="cd .."
 alias mdir="cd /mnt/c/Users/Mithila\ Abhayasinghe"
 alias clip="clip.exe"
 
+# module for git prompt __git_ps1	
 source ~/.git-prompt.sh
 
 PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 " (\033[01;33m%s\033[00m)")'
 PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]${PS1_CMD1}:\n\$ '
+
+# Cargo 
+. "$HOME/.cargo/env"
+
+
