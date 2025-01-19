@@ -1,0 +1,13 @@
+Powershell prompt clearing based on the terminal size
+
+Get-Host.UI.RawUI.WindoSize.Width or something check the docs
+
+
+width for acer - 72
+width for builtin - 64
+	
+last time log :- 
+This project is postponed for future
+This grew to be more complex using .net apis and windows stuff 
+and combining with powershell since probably there is no way 
+to powershell to reacto to window resizing events 
