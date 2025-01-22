@@ -1,0 +1,6 @@
+Lenovo Config Changelog 
+
+Use of -NoLogo tag in terminal after pwsh.exe to stop seeing 
+powershell versino and loadtimes of configs 
+
+Need to import stuff from the latitude config and see changes
